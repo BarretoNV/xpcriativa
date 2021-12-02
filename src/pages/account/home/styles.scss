@@ -1,0 +1,10 @@
+@import "../../../global.scss";
+
+.homeBody {
+    display: flex;
+    flex-direction: row;
+
+    section {
+        width: 100%;
+    }
+}

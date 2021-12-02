@@ -1,0 +1,15 @@
+@import "../../global.scss";
+
+.profileBody {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+
+    .profileSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: pink;
+    }
+}

@@ -1,0 +1,12 @@
+@import "../../global.scss";
+
+.sidebarBody {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+
+    section {
+    display: flex;
+    flex-direction: column;
+    }
+}
