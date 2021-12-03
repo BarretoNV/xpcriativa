@@ -3,8 +3,98 @@
 .homeBody {
     display: flex;
     flex-direction: row;
+    justify-content: flex-end;
+
+    .homeBackground:empty {
+        height: 100vh;
+        width: 100vw;
+        background-image: url(../../../images/background-home.png);
+        position: absolute;
+        z-index: -1;
+    }
 
     section {
-        width: 100%;
+        width: 65vw;
+        height: 100vh;
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+        background-color: white;
+        padding: 0 0 0 6vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-evenly;
+
+        img {
+            height: 10vh;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            h1 {
+                font-size: 4em;
+                margin: 0;
+            }
+            h2 {
+                font-size: 2em;
+                font-weight: normal;
+                font-style: italic;
+                margin: 0;
+            }
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+
+            .buttonCadastro {
+                background-color: yellow;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 1.1rem;
+                height: 3rem;
+                width: 10rem;
+                border-radius: 20px;
+            }
+
+            h4 {
+                font-weight: normal;
+                font-size: 1rem;
+                width: 50%;
+                text-align: justify;
+            }
+
+            h3 {
+                font-size: 1.1rem;
+
+                a {
+                    text-decoration: none;
+                    color: #009FE3;
+
+                    &:active {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .ballonsDiv {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+
+            img {
+                height: 5vh;
+                margin: 0 6vh;
+            }
+        }
     }
 }

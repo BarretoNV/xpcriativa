@@ -1,11 +1,13 @@
 import React from 'react';
 import './styles.scss';
 import InputMask from "react-input-mask";
+import Ballons from '../../../images/ballons.png';
 
 function cadastro() {
     return (
         <div className="cadastroBody">
             <section>
+                <img src={Ballons} alt="Ballons"/>
                 <form>
                     <input type="text" placeholder="Nome Completo:"></input>
                     <input type="text" placeholder="Email:"></input>
