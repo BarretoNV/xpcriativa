@@ -1,12 +1,12 @@
 import React from 'react';
 import './styles.scss';
-import Ballons from '../../../images/ballons.png';
+import IMAGES from '../../../images/images.js';
 
 function login() {
     return (
         <div className="loginBody">
             <section>
-                <img src={Ballons} alt="Ballons"/>
+                <img src={IMAGES.Ballons} alt="Ballons"/>
                 <form>
                     <input type="text" placeholder="Email:"></input>
                     <input type="password" placeholder="Senha:"></input>
