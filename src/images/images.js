@@ -7,6 +7,11 @@ const IMAGES = {
     ProfileIcon: require('./profileIcon.png').default,
     TrophyIcon: require('./trophyIcon.png').default,
     ProfilePic: require('./profilePic.png').default,
+    ExamplePic: require('./beach.jpeg').default,
+    HeartIcon: require('./heartIcon.png').default,
+    SaveIcon: require('./saveIcon.png').default,
+    CommentIcon: require('./commentIcon.png').default,
+
 }
 
 export default IMAGES;
