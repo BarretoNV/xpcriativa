@@ -64,10 +64,9 @@
         align-items: flex-start;
 
         img {
-            object-fit: cover;
-            width: 100%;
-            margin: 0 5em 0 0;
-
+          object-fit: cover;
+          width: 100%;
+          margin: 0 5em 0 0;
         }
       }
 
@@ -82,6 +81,17 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
+
+          button {
+            background-color: transparent;
+            border-color: transparent;
+            cursor: pointer;
+
+            &:active {
+              background-color: red;
+              border-radius: 100px;
+            }
+          }
 
           img {
             height: 30px;
@@ -104,9 +114,26 @@
       }
 
       .postComments {
-          display: flex;
-          flex-direction: row;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .leaveComment {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+
+        input {
           width: 100%;
+          background-color: transparent;
+          border: none;
+        }
+
+        img {
+          height: 50px;
+        }
       }
     }
   }

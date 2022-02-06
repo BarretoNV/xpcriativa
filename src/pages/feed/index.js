@@ -47,6 +47,10 @@ function feed() {
               deserunt. Sit exercitation sunt id est ex ut laboris.
             </p>
           </div>
+          <div className="leaveComment">
+            <img src={IMAGES.ProfilePic} alt="ProfilePic" />
+            <input type="text" placeholder="Deixe um comentário" />
+          </div>
         </div>
       </section>
     </div>
