@@ -11,6 +11,7 @@ const IMAGES = {
     HeartIcon: require('./heartIcon.png').default,
     SaveIcon: require('./saveIcon.png').default,
     CommentIcon: require('./commentIcon.png').default,
+    Lupa: require('./lupa.png').default,
 
 }
 
