@@ -10,8 +10,16 @@ function descobrir() {
       <section className="descobrirSection">
         <div className="searchAndTags">
           <div className="searchBar">
-            <img src={IMAGES.Lupa} alt="Lupa" />
+            <button>
+              <img src={IMAGES.Lupa} alt="Lupa" />
+            </button>
             <input type="text" placeholder=""></input>
+          </div>
+          <div className="tagsBar">
+            <a href="/">#TAGNAME</a>
+            <a href="/">#TAGNAME</a>
+            <a href="/">#TAGNAME</a>
+            <a href="/">#TAGNAME</a>
           </div>
         </div>
         <div className="postBody">
@@ -58,7 +66,6 @@ function descobrir() {
             <input type="text" placeholder="Deixe um comentário" />
           </div>
         </div>
-
       </section>
     </div>
   );
