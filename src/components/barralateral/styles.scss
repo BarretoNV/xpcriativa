@@ -12,7 +12,7 @@
   background-color: white;
   transition: 850ms;
 
-  &.active {
+  &.active { // barra estendida
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -31,15 +31,18 @@
       align-items: center;
       flex-direction: row;
       width: 100%;
-      background-color: transparent;
 
       button {
         background-color: transparent;
         border: none;
         cursor: pointer;
+        height: 30px;
+        background-color: #f2f2f2;
+        border-radius: 10px;
 
         .closeButton {
           display: block;
+          width: 100%;
         }
 
         .menuButton {
@@ -144,6 +147,9 @@
       background-color: transparent;
       border: none;
       cursor: pointer;
+      height: 30px;
+      background-color: #f2f2f2;
+      border-radius: 10px;
 
       .closeButton {
         display: none;
@@ -151,6 +157,7 @@
 
       .menuButton {
         display: block;
+        height: 20px;
       }
     }
 
