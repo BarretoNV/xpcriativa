@@ -63,6 +63,7 @@
 
       .tagsBar {
         display: flex;
+        justify-content: flex-start;
         height: 100%;
         width: 90%;
 
@@ -70,7 +71,17 @@
           text-decoration: none;
           color: #000;
           font-weight: bold;
-          margin: 0 10px;
+          margin: 0 10px 2.5px 10px;
+          padding: 10px;
+          border-radius: 20px;
+
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: #f2f2f2;
+          }
         }
       }
     }

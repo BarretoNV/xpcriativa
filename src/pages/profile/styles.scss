@@ -1,22 +1,214 @@
 @import "../../global.scss";
 
 .profileBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100%;
+  background-image: url(../../images/backgroundGradient.png);
+
+  .profileSection {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    width: 100vw;
-    height: 100%;
-    background-image: url(../../images/backgroundGradient.png);
+    flex-direction: column;
+    width: 95%;
+    height: 90vh;
+    background-color: white;
+    margin: 5vh;
+    border-radius: 30px;
 
-    .profileSection {
+    .profileMain {
+      width: 100%;
+      height: 60%;
+      margin: 5vh 0 5vh 0;
+      display: flex;
+      justify-content: flex-start;
+
+      main {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        background-color: #f2f2f2;
+        padding: 25px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+
+        .profileInfos {
+          display: flex;
+          flex-direction: row;
+
+          .profileResume {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            width: 100%;
+            height: 100%;
+
+            img {
+              object-fit: cover;
+              background-color: blue;
+              height: 10vh;
+            }
+
+            .nameAndWork {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: flex-start;
+              width: 100%;
+              height: 100%;
+              padding: 0 0 3vh 2vh;
+
+              h2,
+              h3 {
+                margin: 0;
+                padding: 0;
+                font-weight: normal;
+              }
+
+              h3 {
+                font-style: italic;
+              }
+            }
+          }
+        }
+
+        .profileFollows {
+          display: flex;
+          flex-direction: row;
+
+          p {
+            margin: 0 5px;
+            height: 100%;
+          }
+        }
+      }
+    }
+
+    .profilePosts {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 95%;
-        height: 90vh;
-        background-color: white;
-        margin: 5vh;
-        border-radius: 30px;
+
+        .postBody {
+          overflow-y: scroll;
+          height: 100%;
+          width: 80%;
+    
+          .postOwner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 5vh;
+    
+            img {
+              height: 10vh;
+            }
+    
+            .ownerInfo {
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+              height: 10vh;
+              width: 100%;
+    
+              h1,
+              h2 {
+                font-size: 1.3em;
+                margin: 0 0 0 0.5em;
+              }
+    
+              h2 {
+                font-style: italic;
+              }
+            }
+          }
+    
+          .postContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+    
+            img {
+              object-fit: cover;
+              width: 100%;
+              margin: 0 5em 0 0;
+            }
+          }
+    
+          .postInteractions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .postReactions {
+              width: 50%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+    
+              button {
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+    
+                &:active {
+                  background-color: red;
+                  border-radius: 100px;
+                }
+              }
+    
+              img {
+                height: 30px;
+              }
+            }
+    
+            .postType {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              width: 30%;
+              margin: 0 1em 0 0;
+    
+              img {
+                height: 30px;
+                margin: 0 1em 0 0;
+              }
+            }
+          }
+    
+          .postComments {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+          }
+    
+          .leaveComment {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+    
+            input {
+              width: 100%;
+              background-color: transparent;
+              border: none;
+            }
+    
+            img {
+              height: 50px;
+            }
+          }
+        }
     }
+  }
 }
