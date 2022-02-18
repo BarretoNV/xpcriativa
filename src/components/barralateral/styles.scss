@@ -10,7 +10,6 @@
   border-bottom-right-radius: 30px;
   border-top-right-radius: 30px;
   background-color: white;
-  transition: 850ms;
 
   &.active { // barra estendida
     display: flex;
@@ -22,7 +21,6 @@
     border-bottom-right-radius: 30px;
     border-top-right-radius: 30px;
     background-color: white;
-    transition: 850ms;
 
     section {
       display: flex;

@@ -14,8 +14,12 @@ function Sidebar() {
       <section>
         <img src={IMAGES.XPLogo} alt="XPLogo" />
         <button onClick={showSidebar}>
-          <div className="closeButton"><GrFormClose /></div> 
-          <div className="menuButton"><GrMenu /></div>
+          <div className="closeButton">
+            <GrFormClose />
+          </div>
+          <div className="menuButton">
+            <GrMenu />
+          </div>
         </button>
       </section>
       <div className="body">
