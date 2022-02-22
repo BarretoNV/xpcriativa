@@ -12,7 +12,11 @@ function Sidebar() {
   return (
     <div className={sidebar ? "sidebarBody active" : "sidebarBody"}>
       <section>
-        <img src={IMAGES.XPLogo} alt="XPLogo" />
+        {sidebar ? (
+          <img src={IMAGES.XPLogo} alt="XPLogo" />
+        ) : (
+          <img src={IMAGES.XPLogoSimple} alt="XPLogo2" />
+        )}
         <button onClick={showSidebar}>
           <div className="closeButton">
             <GrFormClose />
@@ -45,6 +49,13 @@ function Sidebar() {
         </a>
       </div>
       <footer>
+        <div class="profileNotifications">
+          <div class="notificationsPosition">
+            <img src={IMAGES.BellNotif} alt="bell" />
+            <img src={IMAGES.SavedNotif} alt="saveds" />
+            <img src={IMAGES.TrophyNotif} alt="trophy" />
+          </div>
+        </div>
         <div class="profileResume">
           <img src={IMAGES.ProfilePic} alt="Profile Icon" />
           <div class="nameAndWork">

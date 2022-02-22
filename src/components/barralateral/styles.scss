@@ -59,6 +59,7 @@
       justify-content: center;
       align-items: flex-start;
       flex-direction: column;
+      padding-bottom: 20px;
 
       a {
         display: flex;
@@ -87,11 +88,27 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
 
       width: 100%;
       margin: 0 6vh 3vh 0;
       border-bottom-right-radius: 20px;
       border-top-right-radius: 20px;
+
+      .profileNotifications {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        .notificationsPosition {
+          position: absolute;
+          transform: translate(0%, 25%);
+          img {
+            height: 50px;
+            margin: 0 15px;
+          }
+        }
+      }
 
       .profileResume {
         display: flex;
@@ -106,6 +123,9 @@
         img {
           object-fit: cover;
           background-color: blue;
+          height: 100%;
+          width: 100%;
+          border-radius: 100px;
         }
 
         .nameAndWork {
@@ -160,7 +180,7 @@
     }
 
     img {
-      height: 4vh;
+      height: 8vh;
       margin: 2vh;
       object-fit: contain;
     }
@@ -204,6 +224,10 @@
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 
+    .profileNotifications {
+      display: none;
+    }
+
     .profileResume {
       display: flex;
       justify-content: center;
@@ -217,6 +241,7 @@
       img {
         object-fit: cover;
         background-color: blue;
+        border-radius: 50px;
       }
 
       .nameAndWork {
