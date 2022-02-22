@@ -39,9 +39,9 @@ function Sidebar() {
           <img src={IMAGES.ChatIcon} alt="Chat Icon" />
           <p>Troca de experiências</p>
         </a>
-        <a href="/awards">
-          <img src={IMAGES.TrophyIcon} alt="Trophy Icon" />
-          <p>Recompensas</p>
+        <a href="/verMelhor">
+          <img src={IMAGES.Lupa} alt="Lupa Icon" />
+          <p>Para ver melhor</p>
         </a>
         <a href="/profile">
           <img src={IMAGES.ProfileIcon} alt="Profile Icon" />
@@ -51,9 +51,15 @@ function Sidebar() {
       <footer>
         <div class="profileNotifications">
           <div class="notificationsPosition">
-            <img src={IMAGES.BellNotif} alt="bell" />
-            <img src={IMAGES.SavedNotif} alt="saveds" />
-            <img src={IMAGES.TrophyNotif} alt="trophy" />
+            <a href="/">
+              <img src={IMAGES.BellNotif} alt="bell" />
+            </a>
+            <a href="/">
+              <img src={IMAGES.SavedNotif} alt="saveds" />
+            </a>
+            <a href="/">
+              <img src={IMAGES.TrophyNotif} alt="trophy" />
+            </a>
           </div>
         </div>
         <div class="profileResume">

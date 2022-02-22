@@ -7,7 +7,7 @@ import Login from './pages/account/login/index.js';
 import Feed from './pages/feed/index.js';
 import Descobrir from './pages/descobrir/index.js';
 import Chat from './pages/chat/index.js';
-import Awards from './pages/awards/index.js';
+import VerMelhor from './pages/verMelhor/index.js';
 import Profile from './pages/profile/index.js';
 
 const Routes = () => {
@@ -20,7 +20,7 @@ const Routes = () => {
             <Route component={Feed} path='/feed' exact />
             <Route component={Descobrir} path='/descobrir' exact />
             <Route component={Chat} path='/chat' exact />
-            <Route component={Awards} path='/awards' exact />
+            <Route component={VerMelhor} path='/verMelhor' exact />
             <Route component={Profile} path='/profile' exact />
 
         </BrowserRouter>

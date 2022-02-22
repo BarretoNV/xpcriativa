@@ -8,6 +8,20 @@ function feed() {
     <div className="feedBody">
       <Sidebar />
       <section className="feedSection">
+        <div className="makeAPost">
+          <div className="postPic">
+            <img src={IMAGES.ProfilePic} alt="Profile Pic" />
+          </div>
+          <div className="postArea">
+            <div className="postInput">
+              <textarea type="text" placeholder="Compartilhe sua ideia..." />
+            </div>
+            <div className="postButton">
+              <img src={IMAGES.Ballons} alt="Ballons"/>
+              <button type="submit">Publicar!</button>
+            </div>
+          </div>
+        </div>
         <div className="postBody">
           <div className="postOwner">
             <img src={IMAGES.ProfilePic} alt="Profile Pic" />
