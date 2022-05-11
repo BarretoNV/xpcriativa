@@ -1,0 +1,139 @@
+.postBody {
+    overflow-y: scroll;
+    height: 100%;
+    width: 80%;
+
+    .postOwner {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: row;
+      margin-top: 5vh;
+
+      .ownerPictureWrapper {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 120px;
+
+        img {
+          height: 5rem;
+          width: 5rem;
+          object-fit: cover;
+          border-radius: 50px;
+        }
+
+      }
+
+      .ownerInfo {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 10vh;
+        width: 100%;
+
+        h1,
+        h2 {
+          font-size: 1.3em;
+          margin: 0 0 0 0.5em;
+        }
+
+        h2 {
+          font-style: italic;
+        }
+      }
+    }
+
+    .postContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        margin: 0 5em 0 0;
+      }
+    }
+
+    .postInteractions {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      .postReactions {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          background-color: transparent;
+          border-color: transparent;
+          cursor: pointer;
+
+          &:active {
+            background-color: red;
+            border-radius: 100px;
+          }
+        }
+
+        img {
+          height: 30px;
+        }
+      }
+
+      .postType {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30%;
+        margin: 0 1em 0 0;
+
+        img {
+          height: 30px;
+          margin: 0 1em 0 0;
+        }
+      }
+    }
+
+    .postComments {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+    }
+
+    .leaveComment {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+
+      input {
+        width: 90%;
+        margin: 1vh 1vh;
+        border-radius: 10px;
+        border-style: hidden;
+        border: none;
+        padding: 1.5vh;
+        background-color: #f2f2f2;
+
+        font-weight: bold;
+        font-size: 1rem;
+        outline: none;
+      }
+
+      img {
+        height: 3rem;
+        width: 3rem;
+        object-fit: cover;
+        border-radius: 50px;
+      }
+    }
+  }

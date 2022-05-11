@@ -1,12 +1,35 @@
 import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../../../firebaseConfig.js'
+
 import './styles.scss';
 import IMAGES from '../../../images/images.js';
 
 export function Home() {
 
     const [userIsLogged, setUserIsLogged] = useState(false);
+
+    function onAuthStateChanged(user) {
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) 
+              setUserIsLogged(true)
+          });
+        
+    }
+        
+    useEffect(() => {
+        
+        window.scrollTo(0, 0);
+
+        if(!firebase.apps.length)
+            firebase.initializeApp(firebaseConfig)
+        onAuthStateChanged();
+
+    }, []);
 
     if (userIsLogged) {
 

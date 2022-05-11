@@ -13,7 +13,6 @@ import firebaseConfig from '../../firebaseConfig.js'
 function Sidebar() {
 
   const [sidebar, setSideBar] = useState(false);
-  const [userIsLogged, setUserIsLogged] = useState(false);
   const [dataAccount, setDataAccount] = useState([]);
 
   const showSidebar = () => setSideBar(!sidebar);
@@ -102,12 +101,17 @@ function Sidebar() {
             </a>
           </div>
         </div>
-        <div class="profileResume">
-          <img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+        <div className="profileResume" onClick={showSidebar}>
+
+          <div className="profileResumePictureWrapper">
+            <img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+          </div>
+
           <div class="nameAndWork">
-            <h2>@NOME</h2>
+            <h2>{dataAccount.name}</h2>
             <h3>Professora</h3>
           </div>
+
         </div>
       </footer>
     </div>

@@ -1,24 +1,14 @@
-// import { getAuth, signOut } from "firebase/auth";
-// // import { useHistory } from "react-router-dom";
+import firebase from 'firebase/app'
+import 'firebase/auth'
 
-// export function Logoff() {
+import { useHistory } from "react-router-dom";
 
-//     const auth = getAuth();
-//     // let history = useHistory();
+export function SignOut() {
 
-//     signOut(auth).then(() => {
-//         localStorage.setItem('userEmail', '')
-//         alert("Você saiu da sua conta com sucesso!");
-//         // history.push('/')
-//     }).catch((error) => {
-//         alert("Ocorreu um erro ao sair da conta. Tente novamente!")
-//     });
+    let history = useHistory();
 
-// }
+    firebase.auth().signOut()
+    localStorage.setItem('userEmail', '')
+    history.push('/')
 
-// function signOut() {
-
-//     firebase.auth().signOut()
-//     localStorage.setItem('userEmail', '')
-
-// }
+}
