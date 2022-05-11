@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+
+import { Logoff } from '../../utils/signOut';
+
 import "./styles.scss";
 import Sidebar from "../../components/barralateral";
 import IMAGES from "../../images/images.js";
 
-function profile() {
-  return (
-    <div className="profileBody">
+export function Profile() {
+
+  const [userIsLogged, setUserIsLogged] = useState(false);
+
+  if (userIsLogged) {
+
+    return (
+
+      <div className="profileBody">
       <Sidebar />
       <section className="profileSection">
         <div className="profileMain">
@@ -29,6 +38,9 @@ function profile() {
               <p>XX seguidores</p>
               <p>XX seguindo</p>
             </div>
+
+            <button onClick={() => Logoff()}>Sair da conta</button>
+
           </main>
         </div>
         <div className="profilePosts">
@@ -79,7 +91,12 @@ function profile() {
         </div>
       </section>
     </div>
-  );
-}
+      
+    )
+  } else {
 
-export default profile;
+    return null;
+
+  }
+
+}

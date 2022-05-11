@@ -3,7 +3,7 @@ import "./styles.scss";
 import Sidebar from "../../components/barralateral";
 import IMAGES from "../../images/images.js";
 
-function VerMelhor() {
+export function VerMelhor() {
   return (
     <div className="verMelhorBody">
       <Sidebar />
@@ -27,5 +27,3 @@ function VerMelhor() {
     </div>
   );
 }
-
-export default VerMelhor;

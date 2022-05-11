@@ -1,5 +1,3 @@
-import { initializeApp } from 'firebase/app';
-
 const firebaseConfig = {
     apiKey: "AIzaSyBpqWMBQwczBsoRlxjG1mCeG3Qy__ijsRA",
     authDomain: "expcriativa-teste.firebaseapp.com",
@@ -10,6 +8,4 @@ const firebaseConfig = {
     measurementId: "G-8XHDF5BDZT"
   };
 
-const app = initializeApp(firebaseConfig);
-
-export default app;
+export default firebaseConfig;

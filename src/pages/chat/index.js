@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.scss';
 import Sidebar from '../../components/barralateral';
 
-function chat() {
+export function Chat() {
     return (
         <div className="chatBody">
             <Sidebar />
@@ -14,5 +14,3 @@ function chat() {
         </div>
     )
 }
-
-export default chat;

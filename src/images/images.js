@@ -16,6 +16,7 @@ const IMAGES = {
     TrophyNotif: require('./trophyNotif.png').default,
     SavedNotif: require('./savedNotif.png').default,
     BellNotif: require('./bellNotif.png').default,
+    BlankProfilePicture: require('./blankProfilePicture.png').default,
 }
 
 export default IMAGES;

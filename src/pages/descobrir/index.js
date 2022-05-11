@@ -3,7 +3,7 @@ import "./styles.scss";
 import Sidebar from "../../components/barralateral";
 import IMAGES from "../../images/images.js";
 
-function descobrir() {
+export function Descobrir() {
   return (
     <div className="descobrirBody">
       <Sidebar />
@@ -70,5 +70,3 @@ function descobrir() {
     </div>
   );
 }
-
-export default descobrir;
