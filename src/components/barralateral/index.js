@@ -39,6 +39,8 @@ function Sidebar() {
             if (item.email === userEmail)
               setDataAccount(item)
 
+              return 0;
+
           })
 
         } else {

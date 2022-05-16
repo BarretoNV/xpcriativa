@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import { SignOut } from '../../utils/signOut';
 
@@ -10,7 +10,6 @@ import firebaseConfig from '../../firebaseConfig.js'
 import "./styles.scss";
 import { PostBody } from "../../components/Post/index.js";
 import Sidebar from "../../components/barralateral";
-import IMAGES from "../../images/images.js";
 
 export function Profile() {
 
@@ -40,6 +39,8 @@ export function Profile() {
 
             if (item.email === userEmail)
               setDataAccount(item)
+
+            return 0;
 
           })
 

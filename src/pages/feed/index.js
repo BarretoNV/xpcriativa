@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -39,6 +39,8 @@ export function Feed() {
 
             if (item.email === userEmail)
               setDataAccount(item)
+
+            return 0;
 
           })
 
