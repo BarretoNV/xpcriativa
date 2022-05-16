@@ -104,7 +104,10 @@ export function Profile() {
                 <p>XX seguindo</p>
               </div>
 
-              <button onClick={() => SignOut()}>Sair da conta</button>
+              <div className="profileActions">
+                <button>Editar conta</button>
+                <button onClick={() => SignOut()}>Sair da conta</button>
+              </div>
 
             </main>
           </div>

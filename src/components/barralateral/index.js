@@ -54,9 +54,9 @@ function Sidebar() {
     <div className={sidebar ? "sidebarBody active" : "sidebarBody"}>
       <section>
         {sidebar ? (
-          <img src={IMAGES.XPLogo} alt="XPLogo" />
+          <a href="/feed"><img src={IMAGES.XPLogo} alt="XPLogo" /></a>
         ) : (
-          <img src={IMAGES.XPLogoSimple} alt="XPLogo2" />
+          <a href="/feed"><img src={IMAGES.XPLogoSimple} alt="XPLogo2" /></a>
         )}
         <button onClick={showSidebar}>
           <div className="closeButton">
@@ -106,7 +106,7 @@ function Sidebar() {
         <div className="profileResume" onClick={showSidebar}>
 
           <div className="profileResumePictureWrapper">
-            <img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+            <a href="/profile"><img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></a>
           </div>
 
           <div class="nameAndWork">

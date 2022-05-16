@@ -214,8 +214,10 @@ export function Cadastro() {
                             </select>
                             <select name="userType" onChange={handleSelectedType}>
                                 <option disabled selected value=''>Eu sou</option>
-                                <option value="Feminino">Feminino</option>
-                                <option value="Masculino">Masculino</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Coordenador">Diretor/Coordenador</option>
+                                <option value="Aluno">Aluno</option>
+                                <option value="Interessado">Interessado</option>
                                 <option value="Outro">Outro</option>
                             </select>
 
