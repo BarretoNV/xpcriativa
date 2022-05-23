@@ -4,11 +4,12 @@ import {Route, BrowserRouter} from 'react-router-dom';
 import { Home } from './pages/account/home/index.js';
 import { Cadastro } from './pages/account/cadastro/index.js';
 import { Login } from './pages/account/login/index.js';
+import { Profile } from './pages/account/profile/index.js';
 import { Feed } from './pages/feed/index.js';
 import { Descobrir } from './pages/descobrir/index.js';
 import { Chat } from './pages/chat/index.js';
 import { VerMelhor } from './pages/verMelhor/index.js';
-import { Profile } from './pages/profile/index.js';
+import { EditProfile } from './pages/account/editProfile/index.js';
 
 const Routes = () => {
     return (
@@ -21,7 +22,8 @@ const Routes = () => {
             <Route component={Descobrir} path='/descobrir' exact />
             <Route component={Chat} path='/chat' exact />
             <Route component={VerMelhor} path='/verMelhor' exact />
-            <Route component={Profile} path='/profile' exact />
+            <Route component={Profile} path='/perfil' exact />
+            <Route component={EditProfile} path='/editarPerfil' exact />
 
         </BrowserRouter>
     )

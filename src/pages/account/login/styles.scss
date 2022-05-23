@@ -16,12 +16,32 @@
         align-items: center;
         width: 100%;
 
+        a {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 6rem;
+            height: 6rem;
+
+            background-color: #fff;
+
+            border-radius: 100%;
+
+           box-shadow: 4px 4px 8px rgba(0,0,0,0.5), 
+
+        }
+
         img {
-            height: 5vh;
+
+            object-fit: cover;
+            height: auto;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 3vh 0;
+            margin: .5rem;
+
         }
     
         form {
@@ -56,6 +76,8 @@
                 font-weight: bold;
                 font-size: 1rem;
                 outline: none;
+
+                background-color: #ffed00;
 
                 &:hover {
                     cursor: pointer;

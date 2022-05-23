@@ -89,6 +89,9 @@ export function Cadastro() {
         } else {
 
             setHasFilled(false)
+            console.log(hasFilledAllInputs)
+            console.log(userGender)
+            console.log(userType)
 
         }
 
@@ -137,6 +140,7 @@ export function Cadastro() {
 
                     firebase.database().ref('users/' + id).set({
 
+                        id: id,
                         name: dataUser.name,
                         email: dataUser.email,
                         profilePicture: profilePicture,
@@ -144,6 +148,7 @@ export function Cadastro() {
                         birthDate: dataUser.birthDate,
                         userGender: userGender,
                         userType: userType,
+                        description: '',
 
                     });
 

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 import IMAGES from "../../images/images.js";
 import { GrMenu } from "react-icons/gr";
@@ -36,9 +37,9 @@ function Sidebar() {
 
           temp.map((item) => {
 
-            if (item.email === userEmail)
+            if (item.email === userEmail) {
               setDataAccount(item)
-
+            }
               return 0;
 
           })
@@ -84,32 +85,29 @@ function Sidebar() {
           <img src={IMAGES.Lupa} alt="Lupa Icon" />
           <p>Para ver melhor</p>
         </a>
-        <a href="/profile">
-          <img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+        <Link to="/perfil">
+          <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
           <p>Perfil</p>
-        </a>
+        </Link>
       </div>
       <footer>
-        <div class="profileNotifications">
-          <div class="notificationsPosition">
+        <div className="profileNotifications">
+          <div className="notificationsPosition">
             <a href="/">
               <img src={IMAGES.BellNotif} alt="bell" />
             </a>
             <a href="/">
               <img src={IMAGES.SavedNotif} alt="saveds" />
             </a>
-            <a href="/">
-              <img src={IMAGES.TrophyNotif} alt="trophy" />
-            </a>
           </div>
         </div>
         <div className="profileResume" onClick={showSidebar}>
 
           <div className="profileResumePictureWrapper">
-            <a href="/profile"><img src={dataAccount.profilePicture !== undefined ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></a>
+            <Link to="/perfil"><img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></Link>
           </div>
 
-          <div class="nameAndWork">
+          <div className="nameAndWork">
             <h2>{dataAccount.name}</h2>
             <h3>Professora</h3>
           </div>

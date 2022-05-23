@@ -53,6 +53,7 @@
 
             .buttonCadastro {
                 background-color: yellow;
+                color: #000;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -63,6 +64,7 @@
                 height: 3rem;
                 width: 10rem;
                 border-radius: 20px;
+                padding: 0 8px;
             }
 
             h4 {

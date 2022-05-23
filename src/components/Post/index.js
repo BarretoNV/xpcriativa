@@ -51,7 +51,7 @@ export function PostBody() {
             <div className="postOwner">
 
                 <div className="ownerPictureWrapper">
-                    <img src={dataAccount.profilePicture} alt="Profile Pic" />
+                    <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
                 </div>
 
                 <div className="ownerInfo">

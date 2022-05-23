@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
-import { SignOut } from '../../utils/signOut';
+import SignOut from '../../../utils/signOut';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from '../../firebaseConfig.js'
+import firebaseConfig from '../../../firebaseConfig.js'
 
 import "./styles.scss";
-import { PostBody } from "../../components/Post/index.js";
-import Sidebar from "../../components/barralateral";
+import { PostBody } from "../../../components/Post/index.js";
+import Sidebar from "../../../components/barralateral";
+
+import IMAGES from '../../../images/images.js';
 
 export function Profile() {
 
@@ -51,6 +53,13 @@ export function Profile() {
 
   }, []);
 
+  function logOut() {
+
+    SignOut();
+    history.push('/');
+
+  }
+
   function onAuthStateChanged(user) {
 
     firebase.auth().onAuthStateChanged((user) => {
@@ -80,13 +89,13 @@ export function Profile() {
           <div className="profileMain">
             <main>
               <div className="profileInfos">
-                <div class="profileResume">
+                <div className="profileResume">
 
                   <div className="profileResumeImgWrapper">
-                    <img src={dataAccount.profilePicture} alt="Profile Icon" />
+                    <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
                   </div>
 
-                  <div class="nameAndWork">
+                  <div className="nameAndWork">
                     <h2>{dataAccount.name}</h2>
                     <h3>{dataAccount.userType}</h3>
                   </div>
@@ -105,8 +114,8 @@ export function Profile() {
               </div>
 
               <div className="profileActions">
-                <button>Editar conta</button>
-                <button onClick={() => SignOut()}>Sair da conta</button>
+                <Link to="/editarPerfil">Editar perfil</Link>
+                <button onClick={() => logOut()}>Sair da conta</button>
               </div>
 
             </main>

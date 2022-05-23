@@ -4,4 +4,19 @@
     overflow: hidden;
     transition: 250ms;
     font-family: 'Montserrat', sans-serif;
+
+    /*Firefox*/
+    scrollbar-width: auto;
+    scrollbar-color: #474747;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #474747;
+    border-radius: 0px;
+    border: 0px none #ffffff;
+  }
+  
 }

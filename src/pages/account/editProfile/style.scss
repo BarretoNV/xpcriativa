@@ -1,0 +1,172 @@
+@import "../../../global.scss";
+
+.editProfileBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  background-image: url(../../../images/backgroundGradient.png);
+
+    .editProfileSection {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 95%;
+      height: 90vh;
+      background-color: white;
+      margin: 5vh;
+      border-radius: 30px;
+
+      form {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+
+        .editInfosWrapper {
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-around;
+          height: 95%;
+          width: 50%;
+
+          .profilePictureField {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+        
+            position: relative;
+        
+            input {
+        
+                visibility: hidden;
+        
+            }
+        
+            .profilePictureWrapper {
+        
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                position: relative;
+        
+                width: 8rem;
+                height: 8rem;
+        
+                border-radius: 100%;
+                background-color: rgb(197, 107, 107);
+                    
+                svg {
+        
+                    position: absolute;
+                    width: 3rem;
+                    height: 3rem;
+                    display: none;
+                    color: #fff;
+        
+                    background-color: rgba(0, 0, 0, 0.4);
+                    border-radius: 100%;
+                    padding: 5px;
+        
+                }
+        
+                #loading {
+        
+                    -webkit-animation:spin 4s linear infinite;
+                    -moz-animation:spin 4s linear infinite;
+                    animation:spin 4s linear infinite;
+        
+                }
+                
+                label {
+        
+                    position: absolute;
+                    cursor: pointer;
+                    z-index: 2;
+        
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+        
+                    opacity: .2;
+        
+                    &:hover {
+        
+                        background-color: #000;
+        
+                        &~svg {
+        
+                            display: block;
+        
+                        }
+        
+                    }
+                    
+                }
+        
+                img {
+        
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+        
+                }
+        
+            }
+        
+        }
+
+          input, select, textarea{
+
+            width: 80%;
+            outline: none;
+            border-radius: 2px;
+            border-style: hidden;
+            background-color: #eee;
+            padding: 5px;
+
+          }
+          
+
+          textarea {
+
+            overflow-y: scroll;
+            resize: none;
+
+          }
+
+        }
+
+      }
+
+      button {
+
+        width: 40%;
+        margin: 1rem;
+        border: none;
+        background-color: #ffed00;
+        border: none;
+        padding: .5rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        color: #000;
+        font-size: 1rem;
+
+      }
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
@@ -50,7 +50,7 @@ export function Home() {
                         <h2>A rede social da criatividade.</h2>
                     </nav>
                     <body>
-                        <a className="buttonCadastro" href="/cadastro">Se inscreva aqui</a>
+                        <Link to="/cadastro" className="buttonCadastro">Se inscreva aqui</Link>
 
                         <h4>
                             Ao se inscrever, você concorda com os Termos de Serviço
