@@ -103,8 +103,7 @@ export function Profile() {
                 </div>
                 <div className="profileDescription">
                   <p>
-                    Professora na Escola Guadiões da Galáxia. Apaixonada por
-                    livros e ideias criativas. #DIY #thinkoutsidethebox
+                    {dataAccount.description ? dataAccount.description : `Perfil sem descrição. Para adicionar uma descrição, acesse "Editar perfil".` }
                   </p>
                 </div>
               </div>

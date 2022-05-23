@@ -57,7 +57,7 @@ function Sidebar() {
         {sidebar ? (
           <a href="/feed"><img src={IMAGES.XPLogo} alt="XPLogo" /></a>
         ) : (
-          <a href="/feed"><img src={IMAGES.XPLogoSimple} alt="XPLogo2" /></a>
+          <a href="/feed"><img src={IMAGES.XPLogoSimple} id="simpleLogo" alt="XPLogo2" /></a>
         )}
         <button onClick={showSidebar}>
           <div className="closeButton">
@@ -69,36 +69,46 @@ function Sidebar() {
         </button>
       </section>
       <div className="body">
-        <a href="/feed">
-          <img src={IMAGES.HouseIcon} alt="House icon" />
+        <Link to="/feed">
+          <div className="iconWrapper">
+            <img src={IMAGES.HouseIcon} alt="House icon" />
+          </div>
           <p>Feed</p>
-        </a>
-        <a href="/descobrir">
-          <img src={IMAGES.HashIcon} alt="Hash Icon" />
+        </Link>
+        <Link to="/descobrir">
+          <div className="iconWrapper">
+            <img src={IMAGES.HashIcon} alt="Hash Icon" />
+          </div>
           <p>Descobrir criativo</p>
-        </a>
-        <a href="/chat">
+        </Link>
+        <Link to="/chat">
+        <div className="iconWrapper">
           <img src={IMAGES.ChatIcon} alt="Chat Icon" />
+        </div>
           <p>Troca de experiências</p>
-        </a>
-        <a href="/verMelhor">
-          <img src={IMAGES.Lupa} alt="Lupa Icon" />
+        </Link>
+        <Link to="/verMelhor">
+          <div className="iconWrapper">
+            <img src={IMAGES.Lupa} alt="Lupa Icon" />
+          </div>
           <p>Para ver melhor</p>
-        </a>
+        </Link>
         <Link to="/perfil">
-          <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+          <div className="profileIconWrapper">
+            <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
+          </div>
           <p>Perfil</p>
         </Link>
       </div>
       <footer>
         <div className="profileNotifications">
           <div className="notificationsPosition">
-            <a href="/">
+            <Link to="/">
               <img src={IMAGES.BellNotif} alt="bell" />
-            </a>
-            <a href="/">
+            </Link>
+            <Link to="/">
               <img src={IMAGES.SavedNotif} alt="saveds" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="profileResume" onClick={showSidebar}>
