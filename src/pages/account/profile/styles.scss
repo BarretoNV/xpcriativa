@@ -22,7 +22,7 @@
 
     .profileMain {
       width: 100%;
-      min-height: 40%;
+      min-height: 50%;
       max-height: 80%;
       margin: 5vh 0 5vh 0;
       display: flex;
@@ -42,26 +42,28 @@
         .profileInfos {
           display: flex;
           justify-content: space-between;
+          width: 85%;
+          margin-bottom: 1rem;
 
           .profileResume {
             display: flex;
             align-items: center;
-            width: 70%;
-            height: 100%;
             padding: 0;
+            margin: 0 1rem;
+            width: 50%;
 
             .profileResumeImgWrapper {
 
               display: flex;
               align-items: center;
-              height: 80px;
+              justify-content: center;
               width: 80px;
+              height: 80px;
+              border-radius: 100%;
 
               img {
-                object-fit: cover;
-                height: 100%;
                 width: 100%;
-                border-radius: 100%;
+                object-fit: cover;
               }
 
             }
@@ -72,7 +74,8 @@
               justify-content: flex-end;
               align-items: flex-start;
               height: 100%;
-              padding: 0 0 3vh 2vh;
+              margin-left: 1rem; 
+              width: 50%;
 
               h2,
               h3 {
@@ -93,9 +96,12 @@
             align-items: center;
             justify-content: center;
             border-radius: 10px;
+            width: 50%;
+            word-break: break-word;
 
             p {
               text-align: center;
+              padding: 10px;
             }
           }
         }

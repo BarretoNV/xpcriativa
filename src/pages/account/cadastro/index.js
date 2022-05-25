@@ -89,9 +89,6 @@ export function Cadastro() {
         } else {
 
             setHasFilled(false)
-            console.log(hasFilledAllInputs)
-            console.log(userGender)
-            console.log(userType)
 
         }
 
