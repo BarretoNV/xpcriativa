@@ -119,7 +119,7 @@ function Sidebar() {
 
           <div className="nameAndWork">
             <h2>{dataAccount.name}</h2>
-            <h3>Professora</h3>
+            <h3>{dataAccount.userType}</h3>
           </div>
 
         </div>
