@@ -34,16 +34,21 @@ export function Profile() {
 
         if (snapshot.exists()) {
 
-          var data = snapshot.val()
-          var temp = Object.keys(data).map((key) => data[key])
+          let data = snapshot.val()
+          let temp = Object.keys(data).map((key) => data[key])
 
-          temp.map((item) => {
+          temp.forEach((item) => {
+            if (item.email === userEmail) {
+              if (item.followers) {
+                item.followers = Object.keys(item.followers).map((key) => item.followers[key])
+              }
 
-            if (item.email === userEmail)
+              if (item.following) {
+                item.following = Object.keys(item.following).map((key) => item.following[key])
+              }
+
               setDataAccount(item)
-
-            return 0;
-
+            }
           })
 
         } else {
@@ -108,8 +113,17 @@ export function Profile() {
                 </div>
               </div>
               <div className="profileFollows">
-                <p>XX seguidores</p>
-                <p>XX seguindo</p>
+                {dataAccount.followers ? (
+                  <p>{dataAccount.followers.length} seguidores</p>
+                ) : (
+                  <p>Nenhum seguidor</p>
+                )}
+
+                {dataAccount.following ? (
+                  <p>{dataAccount.following.length} seguindo</p>
+                ) : (
+                  <p>Você não segue ninguém</p>
+                )}
               </div>
 
               <div className="profileActions">

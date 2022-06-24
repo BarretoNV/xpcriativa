@@ -78,7 +78,7 @@ export function Feed() {
         <section className="feedSection">
           <div className="makeAPost">
             <div className="postPic">
-              <img src={dataAccount.profilePicture}alt="Profile Pic" />
+            <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
             </div>
             <div className="postArea">
               <div className="postInput">

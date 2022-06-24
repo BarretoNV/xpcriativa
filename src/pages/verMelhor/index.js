@@ -43,6 +43,27 @@ export function VerMelhor() {
 
   }, []);
 
+  function sendFriendRequest(user) {
+
+    const senderId = dataProfile.id
+      
+    firebase.database().ref('users/').child(user.id).child('followers/' + senderId).set({
+      requesterId: senderId,
+      requesterName: dataProfile.name
+    }).then(() => {
+      firebase.database().ref('users/').child(senderId).child('following/' + user.id).set({
+        followedUserId: user.id,
+        followedUserName: user.name
+      })
+    }).then(() => {
+      alert('Usuário seguido com sucesso!');
+    }).catch((error) => {
+      if (error) {
+        alert('Desculpe, ocorreu um erro ao enviar o pedido de amizade, tente novamente!');
+      }
+    })
+  }
+
   return (
     <div className="verMelhorBody">
       <Sidebar />
@@ -67,15 +88,15 @@ export function VerMelhor() {
         <div className="usersList">
           <table className="tableUsers">
             <tbody>
-                {dataUsers.length > 0 ? dataUsers.map((user, index) => ( user.id !== dataProfile.id ? 
-                    (
-                        <tr key={index}>
-                            <td className="profileImgWrapper"><img src={user.profilePicture} alt="" /></td>
-                            <td><b>{user.name}</b></td>
-                            <td><button type="button">Adicionar</button></td>
-                        </tr>
-                    ) : null )) : null
-                }
+              {dataUsers.length > 0 ? dataUsers.map((user, index) => ( user.id !== dataProfile.id ? 
+                (
+                  <tr key={index}>
+                    <td className="profileImgWrapper"><img src={user.profilePicture ? user.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></td>
+                    <td><b>{user.name}</b></td>
+                    <td><button type="button" onClick={() => sendFriendRequest(user)}>Seguir</button></td>
+                  </tr>
+                ) : null )) : null
+              }
             </tbody>
           </table>
         </div>
