@@ -6,6 +6,7 @@ import { Cadastro } from './pages/account/cadastro/index.js';
 import { Login } from './pages/account/login/index.js';
 import { Profile } from './pages/account/profile/index.js';
 import { Feed } from './pages/feed/index.js';
+import { Salvos } from './pages/salvos/index.js';
 import { Descobrir } from './pages/descobrir/index.js';
 import { Chat } from './pages/chat/index.js';
 import { VerMelhor } from './pages/verMelhor/index.js';
@@ -19,6 +20,7 @@ const Routes = () => {
             <Route component={Cadastro} path='/cadastro' exact />
             <Route component={Login} path='/login' exact />
             <Route component={Feed} path='/feed' exact />
+            <Route component={Salvos} path='/salvos' exact />
             <Route component={Descobrir} path='/descobrir' exact />
             <Route component={Chat} path='/chat' exact />
             <Route component={VerMelhor} path='/verMelhor' exact />

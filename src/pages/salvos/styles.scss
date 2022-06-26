@@ -1,0 +1,89 @@
+@import "../../global.scss";
+
+.feedBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100%;
+  background-image: url(../../images/backgroundGradient.png);
+
+  .feedSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    height: 90vh;
+    background-color: white;
+    margin: 5vh;
+    padding: 0 10vh;
+    border-radius: 30px;
+    overflow-x: hidden;
+
+    .makeAPost {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #f2f2f2;
+      width: 60%;
+      height: 40%;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+
+      .postPic {
+
+        height: 6rem;
+        width: 6rem;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: 100%;
+        }
+      }
+
+      .postArea {
+        width: 50%;
+        .postInput {
+          width: 100%;
+          textarea {
+            width: 90%;
+            margin: 1vh 1vh 1vh 0;
+            border-radius: 10px;
+            border-style: hidden;
+            border: none;
+            padding: 1.5vh;
+            background-color: #fff;
+
+            font-weight: bold;
+            font-size: 1rem;
+            outline: none;
+          }
+        }
+
+        .postButton {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 95%;
+          img {
+            height: 25px;
+          }
+          button {
+            background-color: #ffed00;
+            border: none;
+            padding: 1.5vh;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

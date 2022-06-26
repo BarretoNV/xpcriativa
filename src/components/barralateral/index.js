@@ -106,7 +106,7 @@ function Sidebar() {
             <Link to="/">
               <img src={IMAGES.BellNotif} alt="bell" />
             </Link>
-            <Link to="/">
+            <Link to="/salvos">
               <img src={IMAGES.SavedNotif} alt="saveds" />
             </Link>
           </div>
