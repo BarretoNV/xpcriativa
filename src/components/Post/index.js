@@ -69,16 +69,16 @@ export function PostBody() {
                 <div className="postReactions">
                     <button type="button">
                         <img src={IMAGES.HeartIcon} alt="heart icon" />
+                        <p>20</p>
                     </button>
-                    <p>20</p>
                     <button type="button">
                         <img src={IMAGES.CommentIcon} alt="comment icon" />
+                        <p>20</p>
                     </button>
-                    <p>20</p>
                     <button type="button">
                         <img src={IMAGES.SaveIcon} alt="save icon" />
+                        <p>20</p>
                     </button>
-                    <p>20</p>
                 </div>
                 <div className="postType">
                     <img src={IMAGES.HashIcon} alt="hash icon" />
