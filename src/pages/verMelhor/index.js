@@ -49,11 +49,13 @@ export function VerMelhor() {
       
     firebase.database().ref('users/').child(user.id).child('followers/' + senderId).set({
       requesterId: senderId,
-      requesterName: dataProfile.name
+      requesterName: dataProfile.name,
+      profilePicture: dataProfile.profilePicture
     }).then(() => {
       firebase.database().ref('users/').child(senderId).child('following/' + user.id).set({
         followedUserId: user.id,
-        followedUserName: user.name
+        followedUserName: user.name,
+        profilePicture: user.profilePicture
       })
     }).then(() => {
       alert('Usuário seguido com sucesso!');
@@ -94,7 +96,7 @@ export function VerMelhor() {
                     <td className="profileImgWrapper"><img src={user.profilePicture ? user.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></td>
                     <td><b>{user.name}</b></td>
                     <td><button type="button" onClick={() => sendFriendRequest(user)}>Seguir</button></td>
-                  </tr>
+                  </tr> //fazer um includes com a lista de pessoas q ja segue
                 ) : null )) : null
               }
             </tbody>

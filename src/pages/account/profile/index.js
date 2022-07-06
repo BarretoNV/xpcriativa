@@ -114,13 +114,13 @@ export function Profile() {
               </div>
               <div className="profileFollows">
                 {dataAccount.followers ? (
-                  <p>{dataAccount.followers.length} seguidores</p>
+                  <Link to="/seguidores">{dataAccount.followers.length} seguidores</Link>
                 ) : (
                   <p>Nenhum seguidor</p>
                 )}
 
                 {dataAccount.following ? (
-                  <p>{dataAccount.following.length} seguindo</p>
+                  <Link to="/seguindo">{dataAccount.following.length} seguindo</Link>
                 ) : (
                   <p>Você não segue ninguém</p>
                 )}

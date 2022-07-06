@@ -11,6 +11,8 @@ import { Descobrir } from './pages/descobrir/index.js';
 import { Chat } from './pages/chat/index.js';
 import { VerMelhor } from './pages/verMelhor/index.js';
 import { EditProfile } from './pages/account/editProfile/index.js';
+import { Followers } from './pages/account/followers';
+import { Following } from './pages/account/following';
 
 const Routes = () => {
     return (
@@ -26,6 +28,8 @@ const Routes = () => {
             <Route component={VerMelhor} path='/verMelhor' exact />
             <Route component={Profile} path='/perfil' exact />
             <Route component={EditProfile} path='/editarPerfil' exact />
+            <Route component={Followers} path='/seguidores' exact />
+            <Route component={Following} path='/seguindo' exact />
 
         </BrowserRouter>
     )
