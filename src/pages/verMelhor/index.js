@@ -6,17 +6,20 @@ import IMAGES from "../../images/images.js";
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../../firebaseConfig.js';
+import { Link } from "react-router-dom";
 
 export function VerMelhor() {
 
   const [dataProfile, setDataProfile] = useState({});
-  const [dataUsers, setDataUsers] = useState({});
+  const [dataUsers, setDataUsers] = useState([]);
+  const [followedUsers, setFollowedUsers] = useState([]);
 
   useEffect(() => {
 
     window.scrollTo(0, 0);
 
     const userEmail = localStorage.getItem('userEmail')
+    let userList = []
 
     if (!firebase.apps.length)
       firebase.initializeApp(firebaseConfig)
@@ -26,14 +29,28 @@ export function VerMelhor() {
 
         if (snapshot.exists()) {
 
-          var data = snapshot.val()
-          var temp = Object.keys(data).map((key) => data[key])
-          setDataUsers(temp);
+          let data = snapshot.val()
+          let temp = Object.keys(data).map((key) => data[key])
+          let aux = []
 
           temp.forEach((item) => {
             if (item.email === userEmail) {
-                setDataProfile(item)
+              setDataProfile(item)
+
+              if (Object.keys(item.following)) {
+                let followingList = Object.keys(item.following).map((key) => item.following[key])
+
+                followingList.forEach((item) => {
+                  aux.push(item.followedUserName)
+                })
+
+              }
             }
+
+            if (!aux.includes(item.name)) {
+              setDataUsers(dataUsers => [...dataUsers, item]);
+            }
+
           })
 
         } else {
@@ -59,9 +76,10 @@ export function VerMelhor() {
       })
     }).then(() => {
       alert('Usuário seguido com sucesso!');
+      window.location.reload();
     }).catch((error) => {
       if (error) {
-        alert('Desculpe, ocorreu um erro ao enviar o pedido de amizade, tente novamente!');
+        alert('Desculpe, ocorreu um erro ao seguir o usuário, tente novamente!');
       }
     })
   }
@@ -90,14 +108,14 @@ export function VerMelhor() {
         <div className="usersList">
           <table className="tableUsers">
             <tbody>
-              {dataUsers.length > 0 ? dataUsers.map((user, index) => ( user.id !== dataProfile.id ? 
+              {dataUsers.length && dataUsers.map((user, index) => ( user.id !== dataProfile.id ? 
                 (
                   <tr key={index}>
                     <td className="profileImgWrapper"><img src={user.profilePicture ? user.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></td>
-                    <td><b>{user.name}</b></td>
+                    <td><Link to={`/usuario/${user.id}`}><b>{user.name}</b></Link></td>
                     <td><button type="button" onClick={() => sendFriendRequest(user)}>Seguir</button></td>
                   </tr> //fazer um includes com a lista de pessoas q ja segue
-                ) : null )) : null
+                ) : null ))
               }
             </tbody>
           </table>

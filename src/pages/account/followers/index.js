@@ -9,6 +9,7 @@ import firebaseConfig from '../../../firebaseConfig.js'
 import Sidebar from "../../../components/barralateral";
 
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 export function Followers() {
 
@@ -58,15 +59,15 @@ export function Followers() {
                     <tbody>
                         {typeof dataAccount.followers === typeof [] ? dataAccount.followers.map((follower, index) => (
                             <tr>
-                                <td className="followerImgWrapper">
-                                    <img src={follower.profilePicture} alt="Foto do perfil" />
-                                </td>
+                                <Link to={`/usuario/${follower.requesterId}`}>
+                                    <td className="followerImgWrapper">
+                                        <img src={follower.profilePicture} alt="Foto do perfil" />
+                                    </td>
 
-                                <td className="followerInfo">
-                                    <span>{follower.requesterName}</span>
-                                </td>
-
-                                <td><button type="button">Deixar de seguir/seguir</button></td>
+                                    <td className="followerInfo">
+                                        <span>{follower.requesterName}</span>
+                                    </td>
+                                </Link>
                             </tr>
                         )) : null}
                     </tbody>

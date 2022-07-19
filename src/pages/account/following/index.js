@@ -9,6 +9,7 @@ import firebaseConfig from '../../../firebaseConfig.js'
 import Sidebar from "../../../components/barralateral";
 
 import './style.scss';
+import { Link } from 'react-router-dom';
 
 export function Following() {
 
@@ -47,6 +48,15 @@ export function Following() {
 
     }, []);
 
+    function unfollow(user) {
+        const confirm = window.confirm(`Deixar de seguir ${user.followedUserName}?`);
+
+        if (confirm) {
+            firebase.database().ref('users/').child(`${dataAccount.id}/following/${user.followedUserId}`).remove();
+            window.location.reload();
+        }
+    }
+
     return (
 
         <div className="followingBody">
@@ -57,16 +67,16 @@ export function Following() {
                 <table className="followingContainer">
                     <tbody>
                         {typeof dataAccount.following === typeof [] ? dataAccount.following.map((following, index) => (
-                            <tr>
+                            <tr key={index}>
                                 <td className="followingImgWrapper">
                                     <img src={following.profilePicture} alt="Foto do perfil" />
                                 </td>
 
                                 <td className="followingInfo">
-                                    <span>{following.followedUserName}</span>
+                                    <span><Link to={`/usuario/${following.followedUserId}`}>{following.followedUserName}</Link></span>
                                 </td>
 
-                                <td><button type="button">Deixar de seguir</button></td>
+                                <td><button type="button" onClick={() => unfollow(following)}>Deixar de seguir</button></td>
                             </tr>
                         )) : null}
                     </tbody>

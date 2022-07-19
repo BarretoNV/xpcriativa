@@ -13,6 +13,7 @@ import { VerMelhor } from './pages/verMelhor/index.js';
 import { EditProfile } from './pages/account/editProfile/index.js';
 import { Followers } from './pages/account/followers';
 import { Following } from './pages/account/following';
+import { UsersProfile } from './pages/account/usersProfile';
 
 const Routes = () => {
     return (
@@ -30,6 +31,7 @@ const Routes = () => {
             <Route component={EditProfile} path='/editarPerfil' exact />
             <Route component={Followers} path='/seguidores' exact />
             <Route component={Following} path='/seguindo' exact />
+            <Route component={UsersProfile} path='/usuario/:idUser' />
 
         </BrowserRouter>
     )
