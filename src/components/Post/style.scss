@@ -3,12 +3,15 @@
     height: 100%;
     width: 80%;
 
+    .postInfo {
+      padding: 5px;
+    }
+
     .postOwner {
       display: flex;
-      justify-content: flex-start;
       align-items: center;
       flex-direction: row;
-      margin-top: 5vh;
+      margin-top: 2rem;
 
       .ownerPictureWrapper {
 
@@ -67,7 +70,6 @@
       align-items: center;
 
       .postReactions {
-
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -98,10 +100,12 @@
         justify-content: flex-end;
         align-items: center;
         background-color: #f2f2f2;
-        padding: 0 5px;
+        padding: 0 15px;
         border-radius: 5px;
 
-        margin: 1em 1em 0 0;
+        cursor: pointer;
+
+        margin: 1em 0;
 
         img {
           height: 30px;

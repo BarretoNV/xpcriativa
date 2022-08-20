@@ -41,9 +41,12 @@ export function VerMelhor() {
                 let followingList = Object.keys(item.following).map((key) => item.following[key])
 
                 followingList.forEach((item) => {
-                  aux.push(item.followedUserName)
+                  aux.push(item.followedUserId)
                 })
 
+                console.log(aux)
+
+                setFollowedUsers(aux)
               }
             }
 
@@ -108,13 +111,13 @@ export function VerMelhor() {
         <div className="usersList">
           <table className="tableUsers">
             <tbody>
-              {dataUsers.length && dataUsers.map((user, index) => ( user.id !== dataProfile.id ? 
+              {dataUsers.length && dataUsers.map((user, index) => ( (user.id !== dataProfile.id && !followedUsers.includes(user.id)) ? 
                 (
                   <tr key={index}>
                     <td className="profileImgWrapper"><img src={user.profilePicture ? user.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></td>
                     <td><Link to={`/usuario/${user.id}`}><b>{user.name}</b></Link></td>
                     <td><button type="button" onClick={() => sendFriendRequest(user)}>Seguir</button></td>
-                  </tr> //fazer um includes com a lista de pessoas q ja segue
+                  </tr>
                 ) : null ))
               }
             </tbody>

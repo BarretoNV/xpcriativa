@@ -6,17 +6,15 @@ import 'firebase/auth';
 import firebaseConfig from '../../firebaseConfig.js';
 
 import Sidebar from "../../components/barralateral";
+import { MakePost } from "../../components/makePost";
 import { PostBody } from "../../components/Post/index.js";
 
 import "./styles.scss";
-import IMAGES from "../../images/images.js";
 
 export function Feed() {
 
   const [userIsLogged, setUserIsLogged] = useState(false);
   const [dataAccount, setDataAccount] = useState([]);
-
-  let history = useHistory();
 
   useEffect(() => {
 
@@ -76,23 +74,8 @@ export function Feed() {
       <div className="feedBody">
         <Sidebar />
         <section className="feedSection">
-          <div className="makeAPost">
-            <div className="postPic">
-            <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
-            </div>
-            <div className="postArea">
-              <div className="postInput">
-                <textarea type="text" placeholder="Compartilhe sua ideia..." />
-              </div>
-              <div className="postButton">
-                <img src={IMAGES.Ballons} alt="Ballons" />
-                <button type="submit">Publicar!</button>
-              </div>
-            </div>
-          </div>
-
+          <MakePost />
           <PostBody />
-
         </section>
       </div>
     );

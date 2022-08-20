@@ -1,0 +1,287 @@
+@import "../../../global.scss";
+
+.userBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100%;
+  background-image: url(../../../images/backgroundGradient.png);
+
+  .userSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    height: 90vh;
+    background-color: white;
+    margin: 5vh;
+    border-radius: 30px;
+
+    .userMain {
+      width: 100%;
+      min-height: 30%;
+      max-height: 80%;
+      margin: 5vh 0 5vh 0;
+      display: flex;
+      justify-content: flex-start;
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        background-color: #f2f2f2;
+        padding: 25px;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+
+        .userInfos {
+          display: flex;
+          justify-content: space-between;
+          width: 85%;
+          margin-bottom: 1rem;
+
+          .userResume {
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0 1rem;
+            width: 50%;
+
+            .userResumeImgWrapper {
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 80px;
+              height: 80px;
+              border-radius: 100%;
+              margin: 1rem 0;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+              }
+
+            }
+
+            .nameAndWork {
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-end;
+              align-items: flex-start;
+              height: 100%;
+              margin-left: 1rem; 
+              width: 50%;
+
+              h2,
+              h3 {
+                margin: 0;
+                padding-right: 5px;
+                font-weight: normal;
+              }
+
+              h3 {
+                font-style: italic;
+              }
+            }
+
+          }
+          .userDescription {
+            background-color: #b6b6b6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            width: 50%;
+            word-break: break-word;
+
+            p {
+              text-align: center;
+              padding: 10px;
+            }
+          }
+        }
+
+        .userFollows {
+          display: flex;
+          flex-direction: row;
+
+          span {
+            margin: 5px 15px;
+            height: 100%;
+            font-weight: bold;
+            text-decoration: none;
+            color: #000;
+          }
+        }
+
+        .userActions {
+
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          button, a {
+  
+            width: 40%;
+            margin: 1rem;
+            border: none;
+            background-color: #ffed00;
+            border: none;
+            padding: 1.5vh;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+            color: #000;
+            font-size: 1rem;
+            
+            align-self: center;
+  
+          }
+        }
+
+      }
+    }
+
+    .userPosts {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .postBody {
+          overflow-y: scroll;
+          height: 100%;
+          width: 80%;
+    
+          .postOwner {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 5vh;
+    
+            img {
+              height: 10vh;
+              border-radius: 50px;
+            }
+    
+            .ownerInfo {
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+              flex-direction: column;
+              height: 10vh;
+              width: 100%;
+    
+              h1,
+              h2 {
+                font-size: 1.3em;
+                margin: 0 0 0 0.5em;
+              }
+    
+              h2 {
+                font-style: italic;
+              }
+            }
+          }
+    
+          .postContent {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+    
+            img {
+              object-fit: cover;
+              width: 100%;
+              margin: 0 5em 0 0;
+            }
+          }
+    
+          .postInteractions {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            .postReactions {
+              width: 50%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+    
+              button {
+                background-color: transparent;
+                border-color: transparent;
+                cursor: pointer;
+    
+                &:active {
+                  border-radius: 100px;
+                }
+              }
+    
+              img {
+                height: 30px;
+              }
+            }
+    
+            .postType {
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-end;
+              align-items: center;
+              width: 30%;
+              margin: 0 1em 0 0;
+    
+              img {
+                height: 30px;
+                margin: 0 1em 0 0;
+              }
+            }
+          }
+    
+          .postComments {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+          }
+    
+          .leaveComment {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+    
+            input {
+              width: 95%;
+              margin: 1vh 1vh;
+              border-radius: 10px;
+              border-style: hidden;
+              border: none;
+              padding: 1.5vh;
+              background-color: #f2f2f2;
+    
+              font-weight: bold;
+              font-size: 1rem;
+              outline: none;
+            }
+    
+            img {
+              height: 50px;
+              border-radius: 50px;
+            }
+    
+          }
+        }
+    }
+  }
+}
