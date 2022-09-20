@@ -11,6 +11,7 @@ export function PostBody() {
 
     const [dataAccount, setDataAccount] = useState([]);
     const [dataPosts, setDataPosts] = useState([]);
+    const [userComment, setUserComment] = useState('');
 
     useEffect(() => {
 
@@ -54,18 +55,48 @@ export function PostBody() {
             if (snapshot.exists()) {
                 let data = snapshot.val();
                 let temp = Object.keys(data).map((key) => data[key]);
+                temp.forEach((post) => {
+                    if (post.comments) {
+                        console.log(post)
+                        post.comments = Object.keys(post.comments).map((key) => post.comments[key])
+                    }
+                })
                 setDataPosts(temp.reverse());
+                console.log(temp);
             } else {
                 console.log('No data available');
             }
         });
     }, []);
 
+    function writeComment(event) {
+        setUserComment(event.target.value);
+    }
+
+    function leaveComment(item) {
+        const commentId = firebase.database().ref().child('posts').push().key;
+
+        userComment !== '' ? (
+            firebase
+            .database()
+            .ref('posts/' + item.id + '/comments/' + commentId)
+            .set({
+                    commentId: commentId,
+                    comment: userComment,
+                    userName: dataAccount.name,
+                    profilePicture: dataAccount.profilePicture,
+                    userId: dataAccount.id
+                })
+            .then(() => alert('Comentário adicionado'))
+            // .then(() => window.location.reload());
+        ) : (window.alert('Digite um comentário!'));
+    }
+
     return (
         <div className="postBody">
-            {dataPosts.map((item) => {
+            {dataPosts.map((item, index) => {
                     return (
-                    <div className="postInfo">
+                    <div key={index} className="postInfo">
                         <div className="postOwner">
                             <div className="ownerPictureWrapper">
                                 <img src={item.userInfos.profilePicture ? item.userInfos.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" />
@@ -102,15 +133,29 @@ export function PostBody() {
                             </div>
                         </div>
                         <div className="postComments">
-                            <p>
-                                <b>@NOME:</b> Amet duis sit cillum est. Consectetur amet excepteur
-                                enim dolor quis et do nisi enim. Eiusmod culpa amet eu laboris
-                                deserunt. Sit exercitation sunt id est ex ut laboris.
-                            </p>
+                            {item.comments.length > 0 ? item.comments.map((comment) => {
+                                return (
+                                    <>
+                                        <div className="comment">
+                                            <div className="commentOwner">
+                                                <div className="ownerPictureWrapper">
+                                                    <img src={comment.profilePicture ? comment.profilePicture : IMAGES.BlankProfilePicture} alt="Foto do perfil" />
+                                                </div>
+                                                <div className="ownerInfo">
+                                                    <p><b>{comment.userName}: </b>{comment.comment}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </>
+                                )
+                            }
+                            ) : null}
                         </div>
                         <div className="leaveComment">
                             <img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="ProfilePic" />
-                            <input type="text" placeholder="Deixe um comentário" />
+                            <input type="text" placeholder="Deixe um comentário" onChange={writeComment} />
+                            <button onClick={() => leaveComment(item, index)}>Comentar</button>
                         </div>
                         <hr />
                     </div>

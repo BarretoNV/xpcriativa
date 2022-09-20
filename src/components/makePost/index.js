@@ -106,6 +106,7 @@ export function MakePost() {
                 profilePicture: dataAccount.profilePicture,
                 userType: dataAccount.userType
             },
+            id: id,
             body: inputData,
             imageUrl: postMedia,
             comments: '',
@@ -114,8 +115,8 @@ export function MakePost() {
             alreadyTested: '',
             date: `${day}/${month}/${year}`,
         })
-        .then(() => alert('Post enviado com sucesso'))
-        .then(() => window.location.reload());
+        .then(() => alert('Post criado com sucesso'));
+        // .then(() => window.location.reload());
     }
 
     if (userIsLogged) {
