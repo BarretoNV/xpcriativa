@@ -151,7 +151,8 @@ export function MakePost() {
                     />
                     
                     <label for="postImage">
-                        <img src={IMAGES.Ballons} alt="Ballons" style={{cursor: 'pointer'}} />
+                        <img src={IMAGES.EmojiUpload} alt="EmojiUpload" style={{cursor: 'pointer'}} />
+                        <img src={IMAGES.ImageUpload} alt="ImageUpload" style={{cursor: 'pointer', marginLeft: '5px'}} />
                     </label>
 
                     <button type="submit" onClick={createPost}>Publicar!</button>

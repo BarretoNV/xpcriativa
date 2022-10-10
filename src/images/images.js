@@ -17,6 +17,8 @@ const IMAGES = {
     SavedNotif: require('./savedNotif.png').default,
     BellNotif: require('./bellNotif.png').default,
     BlankProfilePicture: require('./blankProfilePicture.png').default,
+    ImageUpload: require('./imgupload.png').default,
+    EmojiUpload: require('./emojiupload.png').default,
 }
 
 export default IMAGES;

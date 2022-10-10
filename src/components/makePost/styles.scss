@@ -23,27 +23,21 @@
     }
 
     .postArea {
-      width: 50%;
+      padding: 0;
+      border: none;
       .postInput {
-        width: 100%;
+        padding: 0;
+        border: none;
         fieldset {
-            border: none;
-            
+          padding: 0;
+          border: none;
             textarea {
-                width: 90%;
-                margin: 1vh 1vh 1vh 0;
-                border-radius: 10px;
-                border-style: hidden;
-                border: none;
-                padding: 1.5vh;
-                background-color: #fff;
-      
-                font-weight: bold;
-                font-size: 1rem;
-                outline: none;
-      
-                resize: none;
-              }
+              width: 90%;
+              height: 100%;
+              border: none;
+              border-radius: 10px;
+              padding: 10px;
+            }
         }
         
       }
@@ -54,8 +48,14 @@
         justify-content: space-between;
         align-items: center;
         width: 95%;
-        img {
-          height: 25px;
+        .postImage {
+          display: flex;
+          justify-content: center;
+          align-self: center;
+          background-color: red;
+          img {
+            height: 25px;
+          }
         }
         button {
           background-color: #ffed00;
