@@ -57,12 +57,14 @@ export function PostBody() {
                 let temp = Object.keys(data).map((key) => data[key]);
                 temp.forEach((post) => {
                     if (post.comments) {
-                        console.log(post)
                         post.comments = Object.keys(post.comments).map((key) => post.comments[key])
+                    }
+
+                    if (post.likes) {
+                        post.likes = Object.keys(post.likes).map((key) => post.likes[key].likeId)
                     }
                 })
                 setDataPosts(temp.reverse());
-                console.log(temp);
             } else {
                 console.log('No data available');
             }
@@ -92,6 +94,27 @@ export function PostBody() {
         ) : (window.alert('Digite um comentário!'));
     }
 
+    function setUserLike(item) {
+        // const likeId = firebase.database().ref().child('posts').push().key;
+        const likeId = 'L' + dataAccount.id;
+
+        if(item.likes && item.likes.includes(likeId)) {
+            firebase
+            .database()
+            .ref('posts/' + item.id + '/likes/' + likeId)
+            .remove()
+        } else {
+            firebase
+            .database()
+            .ref('posts/' + item.id + '/likes/' + likeId)
+            .set({
+                likeId: likeId,
+                userId: dataAccount.id,
+                userName: dataAccount.name
+            })
+        }
+    }
+
     return (
         <div className="postBody">
             {dataPosts.map((item, index) => {
@@ -114,7 +137,9 @@ export function PostBody() {
                         </div>
                         <div className="postInteractions">
                             <div className="postReactions">
-                                <button type="button">
+                                <button 
+                                    type="button" 
+                                    onClick={() => setUserLike(item, index)}>
                                     <img src={IMAGES.HeartIcon} alt="heart icon" />
                                     <p>20</p>
                                 </button>
