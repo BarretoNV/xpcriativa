@@ -10,17 +10,6 @@
   background-image: url(../../images/backgroundGradient.png);
 
   .feedSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 80%;
-    height: 90vh;
-    background-color: white;
-    margin: 5vh;
-    padding: 0 10vh;
-    border-radius: 30px;
-    overflow-x: hidden;
 
     .makeAPost {
       display: flex;

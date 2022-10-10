@@ -111,7 +111,7 @@ function Sidebar() {
             </Link>
           </div>
         </div>
-        <div className="profileResume" onClick={showSidebar}>
+        <div className="profileResume">
 
           <div className="profileResumePictureWrapper">
             <Link to="/perfil"><img src={dataAccount.profilePicture ? dataAccount.profilePicture : IMAGES.BlankProfilePicture} alt="Profile Icon" /></Link>
